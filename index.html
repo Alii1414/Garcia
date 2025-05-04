@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allyss Marie G Garcia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            background-color: #F5F5F4; /* Light background */
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -3%;
+            width: 100%;
+            height: 100%;
+            background-size: contain; /* Adjust to 'cover' if needed */
+            opacity: 0.3; /* Light watermark effect */
+            z-index: -1; /* Send it to the back */
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-direction: column;
+        }
+        .navbar {
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            background-color: #FFA5D6 !important;
+        }
+        .nav-item {
+            margin: 0 15px;
+        }
+        .nav-link {
+            color: white; /* Change navbar text color to white */
+        }
+        .nav-link.active {
+            color: lightblue; /* Change color to light blue when active */
+        }
+        .learn-btn {
+            position: absolute;
+            bottom: 15%;
+            left: 20%;
+            background-color: #FFA5D6; /* Set button background color */
+            color: white; /* Set button text color */
+            border: none; /* Remove border */
+        }
+        .info-text {
+            text-align: justify;
+            position: absolute;
+            bottom: 15%;
+            left: 10%;
+            width: 35%;
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.5;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            border: 1px solid #FFA5D6; /* Darker blue border */
+            box-shadow: 0 0 20px #FFA5D6; /* Glow effect */
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #FFA5D6; /* Dark blue */
+            color: #F5F5F4; /* Light text color */
+            display: flex;
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Center items vertically */
+        }
+        .footer img {
+            width: 30px; /* Set image width */
+            margin-right: 10px; /* Space between images */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        .right-image {
+            position: absolute;
+            bottom: 18%;
+            right: -0.9%;
+            left: 60%;
+            width: 370px; /* Set a fixed width */
+            height: 370px; /* Set a fixed height */
+            border-radius: 50%; /* Make it circular */
+            object-fit: cover; /* Ensure the image covers the area */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        .contact-section {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="skills" data-bs-toggle="modal" data-bs-target="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="certifications" data-bs-toggle="modal" data-bs-target="#certifications">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" class="open-modal" data-modal="objective" data-bs-toggle="modal" data-bs-target="#objective">Professional Objective</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="info-text">
+            <p>Hello! I'm <b>Allyssa Marie G Garcia</b>. I am a dedicated IT professional with a strong background in software development and web technologies. My expertise includes programming languages such as C#, Java, and Python, along with experience in database management and web development. I have successfully developed applications that enhance user experiences and improve operational efficiency. Passionate about continuous learning, I strive to stay updated with the latest industry trends and technologies. My goal is to leverage my skills to contribute to innovative projects that drive impactful results.</p>
+        </div>
+    </div>
+
+    <img src="alii.jpg" alt="Right Image" class="right-image" onclick="changeImage()">
+
+    <footer class="footer">
+        <div>
+            <a href="https://www.facebook.com/allyssamarie.garcia.92" target="_blank">
+                <img src="https://img.icons8.com/?size=100&id=118468&format=png&color=FFFFFF" alt="Facebook Logo">
+            </a>
+            <a href="mailto:garciaallyssamarie14@gmail.com" target="_blank">
+                <img src="https://img.icons8.com/?size=100&id=12580&format=png&color=FFFFFF" alt="Email Logo">
+            </a>
+            <a href="https://www.instagram.com/kmbrlygyl/" target="_blank">
+                <img src="https://img.icons8.com/?size=100&id=32292&format=png&color=FFFFFF" alt="Instagram Logo">
+            </a>
+        </div>
+        <div>
+            &copy; 2025. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        let currentImage = 0;
+        const images = ['alii.png', 'cutee.jpg', 'mee.jpg'];
+
+        function changeImage() {
+            currentImage = (currentImage + 1) % images.length; // Cycle through images
+            document.querySelector('.right-image').src = images[currentImage]; // Change the image source
+        }
+    </script>
+
+    <!-- Portfolio Modals -->
+    <div id="skills" class="modal fade" tabindex="-1" aria-labelledby="skillsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="skillsLabel">Skills</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Proficient in C#, C++, Java, Dart, SQL, HTML, CSS, JavaScript, Python. Experienced in web development and database management.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="certifications" class="modal fade" tabindex="-1" aria-labelledby="certificationsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="certificationsLabel">Certifications</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>NCII - CSS</li>
+                        <li>Cisco</li>
+                        <li>Data Analytics</li>
+                        <li>Cybersecurity</li>
+                        <li>RAITE</li>
+                        <li>Python Essentials 1 & 2</li>
+                        <li>Y4IT</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="objective" class="modal fade" tabindex="-1" aria-labelledby="objectiveLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="objectiveLabel">Professional Objective</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>To leverage my skills in software development and web technologies to create innovative solutions that enhance user experiences and drive business success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.open-modal').forEach(function(link) {
+            link.onclick = function(event) {
+                event.preventDefault();
+                var modalId = this.getAttribute('data-modal');
+                var modal = new bootstrap.Modal(document.getElementById(modalId));
+                modal.show();
+            }
+        });
+    </script>
+</body>
+</html>
